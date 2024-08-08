@@ -1,5 +1,9 @@
 import 'package:bookley_appp/core/utils/assets.dart';
+import 'package:bookley_appp/features/home/presentation/views/homeView.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../../const.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({
@@ -19,13 +23,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-
+    navigateToHome();
   }
 
+  void navigateToHome() {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        Get.to(const HomeView(),
+            transition: Transition.rightToLeft, duration: KTransitionDuration);
+      },
+    );
+  }
 
   @override
   void dispose() {
-
     super.dispose();
     animationController.dispose();
   }
@@ -53,7 +65,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-
   void initSlidingAnimation() {
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
@@ -65,7 +76,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
             .animate(animationController);
     animationController.forward();
     slidingAnimation.addListener(
-          () => setState(() {}),
+      () => setState(() {}),
     );
   }
 }
