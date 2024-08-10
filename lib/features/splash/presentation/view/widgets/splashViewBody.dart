@@ -31,7 +31,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       const Duration(seconds: 2),
       () {
         Get.to(const HomeView(),
-            transition: Transition.rightToLeft, duration: KTransitionDuration);
+            transition: Transition.rightToLeft, duration: kTransitionDuration);
       },
     );
   }
