@@ -4,7 +4,7 @@ import 'package:bookley_appp/core/utils/styls.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/Best_seller.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/best_seller_list_view.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customListView.dart';
+import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookImage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
