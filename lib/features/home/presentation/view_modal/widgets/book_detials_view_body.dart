@@ -1,5 +1,6 @@
 import 'package:bookley_appp/core/utils/styls.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/Ratting.dart';
+import 'package:bookley_appp/features/home/presentation/view_modal/widgets/SimilarBooksListView.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/books_action.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookDetailsAppBar.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookImage.dart';
@@ -14,6 +15,7 @@ class BookDetailsViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
+
         children: [
           const CustomBookDetailsAppBar(),
           Padding(
@@ -46,14 +48,33 @@ class BookDetailsViewBody extends StatelessWidget {
           const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
+
           const SizedBox(
             height: 37,
           ),
 
           const BookAction(),
+          const SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment:Alignment.centerLeft ,
+            child: Text(
+              'Rudyard Kipling',
+              style: Style.textStyle14.copyWith(
+                fontWeight: FontWeight.w600,
+
+              ),
+            ),
+          ),
+          const SizedBox(height: 16,),
+          const SimilarBooksListView(),
+          const SizedBox(height: 16,),
 
         ],
       ),
     );
   }
 }
+
+
