@@ -3,7 +3,7 @@ import 'package:bookley_appp/core/utils/assets.dart';
 import 'package:bookley_appp/core/utils/styls.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/Best_seller.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/best_seller_list_view.dart';
+import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
 import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookImage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(left: 20.0),
-            child: BestSellerListView(),
+            child: BooksListView(),
           ),
         )
       ],
