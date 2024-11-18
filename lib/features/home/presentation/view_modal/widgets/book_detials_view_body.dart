@@ -12,7 +12,6 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -52,5 +51,3 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-
-

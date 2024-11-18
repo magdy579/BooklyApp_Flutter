@@ -33,14 +33,13 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-
-                Text('Best Seller',
+                Text(
+                  'Best Seller',
                   style: Style.textStyle18,
                 ),
                 SizedBox(
                   height: 20,
                 ),
-
               ],
             ),
           ),
@@ -53,12 +52,5 @@ class HomeViewBody extends StatelessWidget {
         )
       ],
     );
-
   }
 }
-
-
-
-
-
-

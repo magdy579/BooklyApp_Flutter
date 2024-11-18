@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import '../../features/search/presentation/view/serachView.dart';
 import '../../features/splash/presentation/view/splashView.dart';
 
-abstract class AppRouter{
-  static const kHomeView='/homeView';
-  static const kBookDetailsView='/bookDetailsView';
-  static const KSearchView='/SearchView';
+abstract class AppRouter {
+  static const kHomeView = '/homeView';
+  static const kBookDetailsView = '/bookDetailsView';
+  static const KSearchView = '/SearchView';
   static final router = GoRouter(
     routes: [
       GoRoute(

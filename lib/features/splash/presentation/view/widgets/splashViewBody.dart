@@ -4,7 +4,6 @@ import 'package:bookley_appp/features/home/presentation/views/homeView.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../../../../../const.dart';
 
 class SplashViewBody extends StatefulWidget {
