@@ -1,14 +1,8 @@
-import 'package:bookley_appp/const.dart';
-import 'package:bookley_appp/core/utils/assets.dart';
 import 'package:bookley_appp/core/utils/styls.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/Best_seller.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookImage.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/BooksListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'customAppBar.dart';
 

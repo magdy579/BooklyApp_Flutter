@@ -6,17 +6,19 @@
 /// saleInfo : {"country":"EG","saleability":"NOT_FOR_SALE","isEbook":false}
 /// accessInfo : {"country":"EG","viewability":"NO_PAGES","embeddable":false,"publicDomain":false,"textToSpeechPermission":"ALLOWED","epub":{"isAvailable":false},"pdf":{"isAvailable":true},"webReaderLink":"http://play.google.com/books/reader?id=0RXLCgAAQBAJ&hl=&source=gbs_api","accessViewStatus":"NONE","quoteSharingAllowed":false}
 /// searchInfo : {"textSnippet":"The new chapter on computer graphics ensures that this book comprehensively covers the syllabi of most universities. The book also uses the Turbo C compiler, which is the most widely used C compiler."}
+library;
 
 class BookModel {
   BookModel({
-      String kind, 
-      String id, 
-      String etag, 
-      String selfLink, 
-      VolumeInfo volumeInfo, 
-      SaleInfo saleInfo, 
-      AccessInfo accessInfo, 
-      SearchInfo searchInfo,}){
+    String kind,
+    String id,
+    String etag,
+    String selfLink,
+    VolumeInfo volumeInfo,
+    SaleInfo saleInfo,
+    AccessInfo accessInfo,
+    SearchInfo searchInfo,
+  }) {
     _kind = kind;
     _id = id;
     _etag = etag;
@@ -25,17 +27,24 @@ class BookModel {
     _saleInfo = saleInfo;
     _accessInfo = accessInfo;
     _searchInfo = searchInfo;
-}
+  }
 
   BookModel.fromJson(dynamic json) {
     _kind = json['kind'];
     _id = json['id'];
     _etag = json['etag'];
     _selfLink = json['selfLink'];
-    _volumeInfo = json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
-    _saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
-    _accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
-    _searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
+    _volumeInfo = json['volumeInfo'] != null
+        ? VolumeInfo.fromJson(json['volumeInfo'])
+        : null;
+    _saleInfo =
+        json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
+    _accessInfo = json['accessInfo'] != null
+        ? AccessInfo.fromJson(json['accessInfo'])
+        : null;
+    _searchInfo = json['searchInfo'] != null
+        ? SearchInfo.fromJson(json['searchInfo'])
+        : null;
   }
   String _kind;
   String _id;
@@ -45,23 +54,26 @@ class BookModel {
   SaleInfo _saleInfo;
   AccessInfo _accessInfo;
   SearchInfo _searchInfo;
-BookModel copyWith({  String kind,
-  String id,
-  String etag,
-  String selfLink,
-  VolumeInfo volumeInfo,
-  SaleInfo saleInfo,
-  AccessInfo accessInfo,
-  SearchInfo searchInfo,
-}) => BookModel(  kind: kind ?? _kind,
-  id: id ?? _id,
-  etag: etag ?? _etag,
-  selfLink: selfLink ?? _selfLink,
-  volumeInfo: volumeInfo ?? _volumeInfo,
-  saleInfo: saleInfo ?? _saleInfo,
-  accessInfo: accessInfo ?? _accessInfo,
-  searchInfo: searchInfo ?? _searchInfo,
-);
+  BookModel copyWith({
+    String kind,
+    String id,
+    String etag,
+    String selfLink,
+    VolumeInfo volumeInfo,
+    SaleInfo saleInfo,
+    AccessInfo accessInfo,
+    SearchInfo searchInfo,
+  }) =>
+      BookModel(
+        kind: kind ?? _kind,
+        id: id ?? _id,
+        etag: etag ?? _etag,
+        selfLink: selfLink ?? _selfLink,
+        volumeInfo: volumeInfo ?? _volumeInfo,
+        saleInfo: saleInfo ?? _saleInfo,
+        accessInfo: accessInfo ?? _accessInfo,
+        searchInfo: searchInfo ?? _searchInfo,
+      );
   String get kind => _kind;
   String get id => _id;
   String get etag => _etag;
@@ -77,38 +89,33 @@ BookModel copyWith({  String kind,
     map['id'] = _id;
     map['etag'] = _etag;
     map['selfLink'] = _selfLink;
-    if (_volumeInfo != null) {
-      map['volumeInfo'] = _volumeInfo.toJson();
-    }
-    if (_saleInfo != null) {
-      map['saleInfo'] = _saleInfo.toJson();
-    }
-    if (_accessInfo != null) {
-      map['accessInfo'] = _accessInfo.toJson();
-    }
-    if (_searchInfo != null) {
-      map['searchInfo'] = _searchInfo.toJson();
-    }
+    map['volumeInfo'] = _volumeInfo.toJson();
+    map['saleInfo'] = _saleInfo.toJson();
+    map['accessInfo'] = _accessInfo.toJson();
+    map['searchInfo'] = _searchInfo.toJson();
     return map;
   }
-
 }
 
 /// textSnippet : "The new chapter on computer graphics ensures that this book comprehensively covers the syllabi of most universities. The book also uses the Turbo C compiler, which is the most widely used C compiler."
 
 class SearchInfo {
   SearchInfo({
-      String textSnippet,}){
+    String textSnippet,
+  }) {
     _textSnippet = textSnippet;
-}
+  }
 
   SearchInfo.fromJson(dynamic json) {
     _textSnippet = json['textSnippet'];
   }
   String _textSnippet;
-SearchInfo copyWith({  String textSnippet,
-}) => SearchInfo(  textSnippet: textSnippet ?? _textSnippet,
-);
+  SearchInfo copyWith({
+    String textSnippet,
+  }) =>
+      SearchInfo(
+        textSnippet: textSnippet ?? _textSnippet,
+      );
   String get textSnippet => _textSnippet;
 
   Map<String, dynamic> toJson() {
@@ -116,7 +123,6 @@ SearchInfo copyWith({  String textSnippet,
     map['textSnippet'] = _textSnippet;
     return map;
   }
-
 }
 
 /// country : "EG"
@@ -132,16 +138,17 @@ SearchInfo copyWith({  String textSnippet,
 
 class AccessInfo {
   AccessInfo({
-      String country, 
-      String viewability, 
-      bool embeddable, 
-      bool publicDomain, 
-      String textToSpeechPermission, 
-      Epub epub, 
-      Pdf pdf, 
-      String webReaderLink, 
-      String accessViewStatus, 
-      bool quoteSharingAllowed,}){
+    String country,
+    String viewability,
+    bool embeddable,
+    bool publicDomain,
+    String textToSpeechPermission,
+    Epub epub,
+    Pdf pdf,
+    String webReaderLink,
+    String accessViewStatus,
+    bool quoteSharingAllowed,
+  }) {
     _country = country;
     _viewability = viewability;
     _embeddable = embeddable;
@@ -152,7 +159,7 @@ class AccessInfo {
     _webReaderLink = webReaderLink;
     _accessViewStatus = accessViewStatus;
     _quoteSharingAllowed = quoteSharingAllowed;
-}
+  }
 
   AccessInfo.fromJson(dynamic json) {
     _country = json['country'];
@@ -176,27 +183,31 @@ class AccessInfo {
   String _webReaderLink;
   String _accessViewStatus;
   bool _quoteSharingAllowed;
-AccessInfo copyWith({  String country,
-  String viewability,
-  bool embeddable,
-  bool publicDomain,
-  String textToSpeechPermission,
-  Epub epub,
-  Pdf pdf,
-  String webReaderLink,
-  String accessViewStatus,
-  bool quoteSharingAllowed,
-}) => AccessInfo(  country: country ?? _country,
-  viewability: viewability ?? _viewability,
-  embeddable: embeddable ?? _embeddable,
-  publicDomain: publicDomain ?? _publicDomain,
-  textToSpeechPermission: textToSpeechPermission ?? _textToSpeechPermission,
-  epub: epub ?? _epub,
-  pdf: pdf ?? _pdf,
-  webReaderLink: webReaderLink ?? _webReaderLink,
-  accessViewStatus: accessViewStatus ?? _accessViewStatus,
-  quoteSharingAllowed: quoteSharingAllowed ?? _quoteSharingAllowed,
-);
+  AccessInfo copyWith({
+    String country,
+    String viewability,
+    bool embeddable,
+    bool publicDomain,
+    String textToSpeechPermission,
+    Epub epub,
+    Pdf pdf,
+    String webReaderLink,
+    String accessViewStatus,
+    bool quoteSharingAllowed,
+  }) =>
+      AccessInfo(
+        country: country ?? _country,
+        viewability: viewability ?? _viewability,
+        embeddable: embeddable ?? _embeddable,
+        publicDomain: publicDomain ?? _publicDomain,
+        textToSpeechPermission:
+            textToSpeechPermission ?? _textToSpeechPermission,
+        epub: epub ?? _epub,
+        pdf: pdf ?? _pdf,
+        webReaderLink: webReaderLink ?? _webReaderLink,
+        accessViewStatus: accessViewStatus ?? _accessViewStatus,
+        quoteSharingAllowed: quoteSharingAllowed ?? _quoteSharingAllowed,
+      );
   String get country => _country;
   String get viewability => _viewability;
   bool get embeddable => _embeddable;
@@ -215,35 +226,34 @@ AccessInfo copyWith({  String country,
     map['embeddable'] = _embeddable;
     map['publicDomain'] = _publicDomain;
     map['textToSpeechPermission'] = _textToSpeechPermission;
-    if (_epub != null) {
-      map['epub'] = _epub.toJson();
-    }
-    if (_pdf != null) {
-      map['pdf'] = _pdf.toJson();
-    }
+    map['epub'] = _epub.toJson();
+    map['pdf'] = _pdf.toJson();
     map['webReaderLink'] = _webReaderLink;
     map['accessViewStatus'] = _accessViewStatus;
     map['quoteSharingAllowed'] = _quoteSharingAllowed;
     return map;
   }
-
 }
 
 /// isAvailable : true
 
 class Pdf {
   Pdf({
-      bool isAvailable,}){
+    bool isAvailable,
+  }) {
     _isAvailable = isAvailable;
-}
+  }
 
   Pdf.fromJson(dynamic json) {
     _isAvailable = json['isAvailable'];
   }
   bool _isAvailable;
-Pdf copyWith({  bool isAvailable,
-}) => Pdf(  isAvailable: isAvailable ?? _isAvailable,
-);
+  Pdf copyWith({
+    bool isAvailable,
+  }) =>
+      Pdf(
+        isAvailable: isAvailable ?? _isAvailable,
+      );
   bool get isAvailable => _isAvailable;
 
   Map<String, dynamic> toJson() {
@@ -251,24 +261,27 @@ Pdf copyWith({  bool isAvailable,
     map['isAvailable'] = _isAvailable;
     return map;
   }
-
 }
 
 /// isAvailable : false
 
 class Epub {
   Epub({
-      bool isAvailable,}){
+    bool isAvailable,
+  }) {
     _isAvailable = isAvailable;
-}
+  }
 
   Epub.fromJson(dynamic json) {
     _isAvailable = json['isAvailable'];
   }
   bool _isAvailable;
-Epub copyWith({  bool isAvailable,
-}) => Epub(  isAvailable: isAvailable ?? _isAvailable,
-);
+  Epub copyWith({
+    bool isAvailable,
+  }) =>
+      Epub(
+        isAvailable: isAvailable ?? _isAvailable,
+      );
   bool get isAvailable => _isAvailable;
 
   Map<String, dynamic> toJson() {
@@ -276,7 +289,6 @@ Epub copyWith({  bool isAvailable,
     map['isAvailable'] = _isAvailable;
     return map;
   }
-
 }
 
 /// country : "EG"
@@ -285,13 +297,14 @@ Epub copyWith({  bool isAvailable,
 
 class SaleInfo {
   SaleInfo({
-      String country, 
-      String saleability, 
-      bool isEbook,}){
+    String country,
+    String saleability,
+    bool isEbook,
+  }) {
     _country = country;
     _saleability = saleability;
     _isEbook = isEbook;
-}
+  }
 
   SaleInfo.fromJson(dynamic json) {
     _country = json['country'];
@@ -301,13 +314,16 @@ class SaleInfo {
   String _country;
   String _saleability;
   bool _isEbook;
-SaleInfo copyWith({  String country,
-  String saleability,
-  bool isEbook,
-}) => SaleInfo(  country: country ?? _country,
-  saleability: saleability ?? _saleability,
-  isEbook: isEbook ?? _isEbook,
-);
+  SaleInfo copyWith({
+    String country,
+    String saleability,
+    bool isEbook,
+  }) =>
+      SaleInfo(
+        country: country ?? _country,
+        saleability: saleability ?? _saleability,
+        isEbook: isEbook ?? _isEbook,
+      );
   String get country => _country;
   String get saleability => _saleability;
   bool get isEbook => _isEbook;
@@ -319,7 +335,6 @@ SaleInfo copyWith({  String country,
     map['isEbook'] = _isEbook;
     return map;
   }
-
 }
 
 /// title : "Programming in C, 3e"
@@ -344,25 +359,26 @@ SaleInfo copyWith({  String country,
 
 class VolumeInfo {
   VolumeInfo({
-      String title, 
-      List<String> authors, 
-      String publisher, 
-      String publishedDate, 
-      String description, 
-      List<IndustryIdentifiers> industryIdentifiers, 
-      ReadingModes readingModes, 
-      num pageCount, 
-      String printType, 
-      List<String> categories, 
-      String maturityRating, 
-      bool allowAnonLogging, 
-      String contentVersion, 
-      PanelizationSummary panelizationSummary, 
-      ImageLinks imageLinks, 
-      String language, 
-      String previewLink, 
-      String infoLink, 
-      String canonicalVolumeLink,}){
+    String title,
+    List<String> authors,
+    String publisher,
+    String publishedDate,
+    String description,
+    List<IndustryIdentifiers> industryIdentifiers,
+    ReadingModes readingModes,
+    num pageCount,
+    String printType,
+    List<String> categories,
+    String maturityRating,
+    bool allowAnonLogging,
+    String contentVersion,
+    PanelizationSummary panelizationSummary,
+    ImageLinks imageLinks,
+    String language,
+    String previewLink,
+    String infoLink,
+    String canonicalVolumeLink,
+  }) {
     _title = title;
     _authors = authors;
     _publisher = publisher;
@@ -382,7 +398,7 @@ class VolumeInfo {
     _previewLink = previewLink;
     _infoLink = infoLink;
     _canonicalVolumeLink = canonicalVolumeLink;
-}
+  }
 
   VolumeInfo.fromJson(dynamic json) {
     _title = json['title'];
@@ -396,15 +412,22 @@ class VolumeInfo {
         _industryIdentifiers.add(IndustryIdentifiers.fromJson(v));
       });
     }
-    _readingModes = json['readingModes'] != null ? ReadingModes.fromJson(json['readingModes']) : null;
+    _readingModes = json['readingModes'] != null
+        ? ReadingModes.fromJson(json['readingModes'])
+        : null;
     _pageCount = json['pageCount'];
     _printType = json['printType'];
-    _categories = json['categories'] != null ? json['categories'].cast<String>() : [];
+    _categories =
+        json['categories'] != null ? json['categories'].cast<String>() : [];
     _maturityRating = json['maturityRating'];
     _allowAnonLogging = json['allowAnonLogging'];
     _contentVersion = json['contentVersion'];
-    _panelizationSummary = json['panelizationSummary'] != null ? PanelizationSummary.fromJson(json['panelizationSummary']) : null;
-    _imageLinks = json['imageLinks'] != null ? ImageLinks.fromJson(json['imageLinks']) : null;
+    _panelizationSummary = json['panelizationSummary'] != null
+        ? PanelizationSummary.fromJson(json['panelizationSummary'])
+        : null;
+    _imageLinks = json['imageLinks'] != null
+        ? ImageLinks.fromJson(json['imageLinks'])
+        : null;
     _language = json['language'];
     _previewLink = json['previewLink'];
     _infoLink = json['infoLink'];
@@ -429,45 +452,48 @@ class VolumeInfo {
   String _previewLink;
   String _infoLink;
   String _canonicalVolumeLink;
-VolumeInfo copyWith({  String title,
-  List<String> authors,
-  String publisher,
-  String publishedDate,
-  String description,
-  List<IndustryIdentifiers> industryIdentifiers,
-  ReadingModes readingModes,
-  num pageCount,
-  String printType,
-  List<String> categories,
-  String maturityRating,
-  bool allowAnonLogging,
-  String contentVersion,
-  PanelizationSummary panelizationSummary,
-  ImageLinks imageLinks,
-  String language,
-  String previewLink,
-  String infoLink,
-  String canonicalVolumeLink,
-}) => VolumeInfo(  title: title ?? _title,
-  authors: authors ?? _authors,
-  publisher: publisher ?? _publisher,
-  publishedDate: publishedDate ?? _publishedDate,
-  description: description ?? _description,
-  industryIdentifiers: industryIdentifiers ?? _industryIdentifiers,
-  readingModes: readingModes ?? _readingModes,
-  pageCount: pageCount ?? _pageCount,
-  printType: printType ?? _printType,
-  categories: categories ?? _categories,
-  maturityRating: maturityRating ?? _maturityRating,
-  allowAnonLogging: allowAnonLogging ?? _allowAnonLogging,
-  contentVersion: contentVersion ?? _contentVersion,
-  panelizationSummary: panelizationSummary ?? _panelizationSummary,
-  imageLinks: imageLinks ?? _imageLinks,
-  language: language ?? _language,
-  previewLink: previewLink ?? _previewLink,
-  infoLink: infoLink ?? _infoLink,
-  canonicalVolumeLink: canonicalVolumeLink ?? _canonicalVolumeLink,
-);
+  VolumeInfo copyWith({
+    String title,
+    List<String> authors,
+    String publisher,
+    String publishedDate,
+    String description,
+    List<IndustryIdentifiers> industryIdentifiers,
+    ReadingModes readingModes,
+    num pageCount,
+    String printType,
+    List<String> categories,
+    String maturityRating,
+    bool allowAnonLogging,
+    String contentVersion,
+    PanelizationSummary panelizationSummary,
+    ImageLinks imageLinks,
+    String language,
+    String previewLink,
+    String infoLink,
+    String canonicalVolumeLink,
+  }) =>
+      VolumeInfo(
+        title: title ?? _title,
+        authors: authors ?? _authors,
+        publisher: publisher ?? _publisher,
+        publishedDate: publishedDate ?? _publishedDate,
+        description: description ?? _description,
+        industryIdentifiers: industryIdentifiers ?? _industryIdentifiers,
+        readingModes: readingModes ?? _readingModes,
+        pageCount: pageCount ?? _pageCount,
+        printType: printType ?? _printType,
+        categories: categories ?? _categories,
+        maturityRating: maturityRating ?? _maturityRating,
+        allowAnonLogging: allowAnonLogging ?? _allowAnonLogging,
+        contentVersion: contentVersion ?? _contentVersion,
+        panelizationSummary: panelizationSummary ?? _panelizationSummary,
+        imageLinks: imageLinks ?? _imageLinks,
+        language: language ?? _language,
+        previewLink: previewLink ?? _previewLink,
+        infoLink: infoLink ?? _infoLink,
+        canonicalVolumeLink: canonicalVolumeLink ?? _canonicalVolumeLink,
+      );
   String get title => _title;
   List<String> get authors => _authors;
   String get publisher => _publisher;
@@ -495,31 +521,23 @@ VolumeInfo copyWith({  String title,
     map['publisher'] = _publisher;
     map['publishedDate'] = _publishedDate;
     map['description'] = _description;
-    if (_industryIdentifiers != null) {
-      map['industryIdentifiers'] = _industryIdentifiers.map((v) => v.toJson()).toList();
-    }
-    if (_readingModes != null) {
-      map['readingModes'] = _readingModes.toJson();
-    }
+    map['industryIdentifiers'] =
+        _industryIdentifiers.map((v) => v.toJson()).toList();
+    map['readingModes'] = _readingModes.toJson();
     map['pageCount'] = _pageCount;
     map['printType'] = _printType;
     map['categories'] = _categories;
     map['maturityRating'] = _maturityRating;
     map['allowAnonLogging'] = _allowAnonLogging;
     map['contentVersion'] = _contentVersion;
-    if (_panelizationSummary != null) {
-      map['panelizationSummary'] = _panelizationSummary.toJson();
-    }
-    if (_imageLinks != null) {
-      map['imageLinks'] = _imageLinks.toJson();
-    }
+    map['panelizationSummary'] = _panelizationSummary.toJson();
+    map['imageLinks'] = _imageLinks.toJson();
     map['language'] = _language;
     map['previewLink'] = _previewLink;
     map['infoLink'] = _infoLink;
     map['canonicalVolumeLink'] = _canonicalVolumeLink;
     return map;
   }
-
 }
 
 /// smallThumbnail : "http://books.google.com/books/content?id=0RXLCgAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
@@ -527,11 +545,12 @@ VolumeInfo copyWith({  String title,
 
 class ImageLinks {
   ImageLinks({
-      String smallThumbnail, 
-      String thumbnail,}){
+    String smallThumbnail,
+    String thumbnail,
+  }) {
     _smallThumbnail = smallThumbnail;
     _thumbnail = thumbnail;
-}
+  }
 
   ImageLinks.fromJson(dynamic json) {
     _smallThumbnail = json['smallThumbnail'];
@@ -539,11 +558,14 @@ class ImageLinks {
   }
   String _smallThumbnail;
   String _thumbnail;
-ImageLinks copyWith({  String smallThumbnail,
-  String thumbnail,
-}) => ImageLinks(  smallThumbnail: smallThumbnail ?? _smallThumbnail,
-  thumbnail: thumbnail ?? _thumbnail,
-);
+  ImageLinks copyWith({
+    String smallThumbnail,
+    String thumbnail,
+  }) =>
+      ImageLinks(
+        smallThumbnail: smallThumbnail ?? _smallThumbnail,
+        thumbnail: thumbnail ?? _thumbnail,
+      );
   String get smallThumbnail => _smallThumbnail;
   String get thumbnail => _thumbnail;
 
@@ -553,7 +575,6 @@ ImageLinks copyWith({  String smallThumbnail,
     map['thumbnail'] = _thumbnail;
     return map;
   }
-
 }
 
 /// containsEpubBubbles : false
@@ -561,11 +582,12 @@ ImageLinks copyWith({  String smallThumbnail,
 
 class PanelizationSummary {
   PanelizationSummary({
-      bool containsEpubBubbles, 
-      bool containsImageBubbles,}){
+    bool containsEpubBubbles,
+    bool containsImageBubbles,
+  }) {
     _containsEpubBubbles = containsEpubBubbles;
     _containsImageBubbles = containsImageBubbles;
-}
+  }
 
   PanelizationSummary.fromJson(dynamic json) {
     _containsEpubBubbles = json['containsEpubBubbles'];
@@ -573,11 +595,14 @@ class PanelizationSummary {
   }
   bool _containsEpubBubbles;
   bool _containsImageBubbles;
-PanelizationSummary copyWith({  bool containsEpubBubbles,
-  bool containsImageBubbles,
-}) => PanelizationSummary(  containsEpubBubbles: containsEpubBubbles ?? _containsEpubBubbles,
-  containsImageBubbles: containsImageBubbles ?? _containsImageBubbles,
-);
+  PanelizationSummary copyWith({
+    bool containsEpubBubbles,
+    bool containsImageBubbles,
+  }) =>
+      PanelizationSummary(
+        containsEpubBubbles: containsEpubBubbles ?? _containsEpubBubbles,
+        containsImageBubbles: containsImageBubbles ?? _containsImageBubbles,
+      );
   bool get containsEpubBubbles => _containsEpubBubbles;
   bool get containsImageBubbles => _containsImageBubbles;
 
@@ -587,7 +612,6 @@ PanelizationSummary copyWith({  bool containsEpubBubbles,
     map['containsImageBubbles'] = _containsImageBubbles;
     return map;
   }
-
 }
 
 /// text : false
@@ -595,11 +619,12 @@ PanelizationSummary copyWith({  bool containsEpubBubbles,
 
 class ReadingModes {
   ReadingModes({
-      bool text, 
-      bool image,}){
+    bool text,
+    bool image,
+  }) {
     _text = text;
     _image = image;
-}
+  }
 
   ReadingModes.fromJson(dynamic json) {
     _text = json['text'];
@@ -607,11 +632,14 @@ class ReadingModes {
   }
   bool _text;
   bool _image;
-ReadingModes copyWith({  bool text,
-  bool image,
-}) => ReadingModes(  text: text ?? _text,
-  image: image ?? _image,
-);
+  ReadingModes copyWith({
+    bool text,
+    bool image,
+  }) =>
+      ReadingModes(
+        text: text ?? _text,
+        image: image ?? _image,
+      );
   bool get text => _text;
   bool get image => _image;
 
@@ -621,7 +649,6 @@ ReadingModes copyWith({  bool text,
     map['image'] = _image;
     return map;
   }
-
 }
 
 /// type : "ISBN_13"
@@ -629,11 +656,12 @@ ReadingModes copyWith({  bool text,
 
 class IndustryIdentifiers {
   IndustryIdentifiers({
-      String type, 
-      String identifier,}){
+    String type,
+    String identifier,
+  }) {
     _type = type;
     _identifier = identifier;
-}
+  }
 
   IndustryIdentifiers.fromJson(dynamic json) {
     _type = json['type'];
@@ -641,11 +669,14 @@ class IndustryIdentifiers {
   }
   String _type;
   String _identifier;
-IndustryIdentifiers copyWith({  String type,
-  String identifier,
-}) => IndustryIdentifiers(  type: type ?? _type,
-  identifier: identifier ?? _identifier,
-);
+  IndustryIdentifiers copyWith({
+    String type,
+    String identifier,
+  }) =>
+      IndustryIdentifiers(
+        type: type ?? _type,
+        identifier: identifier ?? _identifier,
+      );
   String get type => _type;
   String get identifier => _identifier;
 
@@ -655,5 +686,4 @@ IndustryIdentifiers copyWith({  String type,
     map['identifier'] = _identifier;
     return map;
   }
-
 }

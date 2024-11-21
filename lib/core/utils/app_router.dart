@@ -3,7 +3,6 @@ import 'package:bookley_appp/features/home/presentation/views/homeView.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/search/presentation/view/serachView.dart';
-import '../../features/splash/presentation/view/splashView.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';

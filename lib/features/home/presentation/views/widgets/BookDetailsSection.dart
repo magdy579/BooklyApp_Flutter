@@ -1,7 +1,7 @@
 import 'package:bookley_appp/core/utils/styls.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/Ratting.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/books_action.dart';
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/customBookImage.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/Ratting.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/books_action.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/customBookImage.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {

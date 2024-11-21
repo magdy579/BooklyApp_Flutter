@@ -1,8 +1,6 @@
-import 'package:bookley_appp/features/home/presentation/view_modal/widgets/BooksListView.dart';
 import 'package:bookley_appp/features/search/presentation/Widgets/CustomSearchTextField.dart';
 import 'package:bookley_appp/features/search/presentation/Widgets/SearchResultListView.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../core/utils/styls.dart';
 

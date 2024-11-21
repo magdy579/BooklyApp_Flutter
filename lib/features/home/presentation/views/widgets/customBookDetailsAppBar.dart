@@ -8,8 +8,9 @@ class CustomBookDetailsAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(onPressed: () {}, icon: Icon(Icons.close)),
-        IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined)),
+        IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
+        IconButton(
+            onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined)),
       ],
     );
   }
