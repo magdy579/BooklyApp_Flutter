@@ -2,9 +2,17 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../data/models/book_model/book_model.dart';
+import '../../../../data/repos/home_repo.dart';
 
 part 'newst_books_state.dart';
 
 class NewstBooksCubit extends Cubit<NewstBooksState> {
-  NewstBooksCubit() : super(NewstBooksInitial());
+  NewstBooksCubit(this.homeRepo) : super(NewstBooksInitial());
+  final HomeRepo homeRepo;
+  Future<void> featchNewstBooks() async {
+    emit(NewstBooksLooding());
+    var result = await homeRepo.featchFeaturedBooks();
+    result.fold((faailure) => emit(NewstBooksFailure(faailure.errMessage)),
+        (books) => emit(NewstBooksSucces(books)));
+  }
 }
