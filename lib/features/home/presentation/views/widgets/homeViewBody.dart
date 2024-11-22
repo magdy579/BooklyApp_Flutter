@@ -1,9 +1,11 @@
 import 'package:bookley_appp/core/utils/styls.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/Best_seller.dart';
 import 'package:bookley_appp/features/home/presentation/views/widgets/BooksListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'BestSellerListView.dart';
 import 'customAppBar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -41,7 +43,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(left: 20.0),
-            child: BooksListView(),
+            child: BestSellerListView(),
           ),
         )
       ],
