@@ -34,8 +34,9 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_bloc: 
+  flutter_bloc: null
   font_awesome_flutter: null
+  get_it: ^8.0.2
   go_router: null
   google_fonts: null
 

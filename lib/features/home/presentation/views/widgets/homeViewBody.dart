@@ -1,5 +1,4 @@
 import 'package:bookley_appp/core/utils/styls.dart';
-import 'package:bookley_appp/features/home/presentation/views/widgets/Best_seller.dart';
 import 'package:bookley_appp/features/home/presentation/views/widgets/BooksListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
