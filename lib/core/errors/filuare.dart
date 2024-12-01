@@ -23,7 +23,7 @@ class ServerFailure extends Failure {
         return ServerFailure.fromResponse(
             dioError.response!.statusCode!, dioError.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailure('Request With ApiServer Is Canceld');
+        return ServerFailure('Request With ApiServer Is Canceled');
       case DioExceptionType.connectionError:
         return ServerFailure('connection Error With ApiServer');
 
@@ -31,20 +31,22 @@ class ServerFailure extends Failure {
         if (dioError.message!.contains('SocketException')) {
           return ServerFailure('No Internet Connection ');
         }
-        return ServerFailure('Unexpcted Error,Please Try Agin!');
+        return ServerFailure('Unexpected Error,Please Try Aging!');
       default:
-        return ServerFailure('Oppos Ther Was Ann Error,Please Try Agin Later!');
+        return ServerFailure(
+            'Oppose Their Was Ann Error,Please Try Aging Later!');
     }
   }
   factory ServerFailure.fromResponse(int stateCode, dynamic response) {
     if (stateCode == 400 || stateCode == 401 || stateCode == 403) {
       return ServerFailure(response['error']['message']);
     } else if (stateCode == 404) {
-      return ServerFailure('Your Request Not Found,Please Try Agin Later!');
+      return ServerFailure('Your Request Not Found,Please Try Aging Later!');
     } else if (stateCode == 500) {
-      return ServerFailure('Internal Server Error,Please Try Agin Later!');
+      return ServerFailure('Internal Server Error,Please Try Aging Later!');
     } else {
-      return ServerFailure('Oppos Ther Was Ann Error,Please Try Agin Later!');
+      return ServerFailure(
+          'Oppose Their Was Ann Error,Please Try Aging Later!');
     }
   }
 }

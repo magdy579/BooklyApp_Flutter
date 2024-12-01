@@ -1,15 +1,17 @@
 import 'package:bookley_appp/const.dart';
 import 'package:bookley_appp/core/utils/app_router.dart';
 import 'package:bookley_appp/core/utils/styls.dart';
+import 'package:bookley_appp/features/home/data/models/book_model/book_model.dart';
 import 'package:bookley_appp/features/home/presentation/views/widgets/Ratting.dart';
+import 'package:bookley_appp/features/home/presentation/views/widgets/customBookImage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
-
+  const BestSellerItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,19 +24,8 @@ class BestSellerItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 2.4 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage(AssetsData.testBook),
-                      fit: BoxFit.fill,
-                    ),
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-              ),
+              CustomBookImage(
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
               const SizedBox(
                 width: 30,
               ),
@@ -45,7 +36,7 @@ class BestSellerItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child: Text(
-                        'Sorry I’m Harry Sorry I’m Harry Sorry I’m Harry Sorry I’m Harry',
+                        bookModel.volumeInfo.title!,
                         style: Style.textStyle20.copyWith(
                           fontFamily: kGtSectraFine,
                         ),
@@ -56,8 +47,8 @@ class BestSellerItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    const Text(
-                      'j.k .Rowling',
+                     Text(
+                      bookModel.volumeInfo.authors![0],
                       style: Style.textStyle14,
                     ),
                     const SizedBox(
@@ -71,7 +62,10 @@ class BestSellerItem extends StatelessWidget {
                           style: Style.textStyle20
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
-                        const BookRating(),
+                         BookRating(
+                          count: bookModel.volumeInfo.ratingsCount ?? 0,
+                          ratting:bookModel.volumeInfo.averageRating ?? 0,
+                        ),
                       ],
                     )
                   ],

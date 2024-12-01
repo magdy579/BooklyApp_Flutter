@@ -1,5 +1,4 @@
 import 'package:bookley_appp/core/utils/styls.dart';
-import 'package:bookley_appp/features/home/presentation/views/widgets/Best_seller.dart';
 import 'package:bookley_appp/features/home/presentation/views/widgets/BooksListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +13,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  'Best Seller',
+                  'Newest Books',
                   style: Style.textStyle18,
                 ),
                 SizedBox(
