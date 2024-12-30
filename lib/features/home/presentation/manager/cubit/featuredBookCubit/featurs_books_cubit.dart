@@ -13,10 +13,12 @@ class FeatursBooksCubit extends Cubit<FeatursBooksState> {
   Future<void> fetchFeaturedBooks() async {
     // Corrected method name
     emit(FeatursBooksLoading());
-    var result = await homeRepo.featchFeaturedBooks();
+    var result = await homeRepo
+        .featchFeaturedBooks(); // Ensure repo method is also typo-free
     result.fold(
       (failure) => emit(FeatursBooksFailure(failure.errMessage)),
-      (books) => emit(FeatursBooksSuccess(books)),
+      (books) => emit(
+          FeatursBooksSuccess(books)), // Corrected `FeatursBooksSucees` typo
     );
   }
 }

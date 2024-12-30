@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => NewstBooksCubit(
             getIt.get<HomeRepoImpl>(),
-          )..featchNewstBooks(),
+          ),
         ),
       ],
       child: MaterialApp.router(

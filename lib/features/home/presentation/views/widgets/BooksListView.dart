@@ -25,7 +25,7 @@ class BooksListView extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 8.0),
                   child: CustomBookImage(
                     imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
                   ),
                 );
               },
@@ -38,7 +38,7 @@ class BooksListView extends StatelessWidget {
             errMessage: state.errorMessage,
           );
         } else {
-          return const CustomCirclerIndictor();
+          return const CircularIndicator();
         }
       },
     );
