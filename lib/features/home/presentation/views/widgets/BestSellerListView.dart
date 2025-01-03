@@ -17,7 +17,7 @@ class BestSellerListView extends StatelessWidget {
         if (state is NewstBooksSucces) {
           return ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
+            // shrinkWrap: true,
             padding: EdgeInsets.zero,
             itemCount: state.books.length,
             itemBuilder: (context, index) {
@@ -32,7 +32,7 @@ class BestSellerListView extends StatelessWidget {
         } else if (state is NewstBooksFailure) {
           return CustomErrorMessage(errMessage: state.errMessage);
         } else {
-          return const CustomCirclerIndictor();
+          return const CustomCircularIndicator();
         }
       },
     );

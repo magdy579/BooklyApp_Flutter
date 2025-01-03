@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CircularIndicator extends StatelessWidget {
-  const CircularIndicator({super.key});
+class CustomCircularIndicator extends StatelessWidget {
+  const CustomCircularIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {
